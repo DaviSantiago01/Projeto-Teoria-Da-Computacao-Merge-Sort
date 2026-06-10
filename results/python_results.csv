@@ -1,0 +1,10 @@
+linguagem,cenario,tamanho,n,media_ms,desvio_ms,min_ms,max_ms,rodadas
+Python,melhor_caso,pequeno,1000,2.2306,0.4495,1.6777,3.3689,30
+Python,melhor_caso,medio,10000,22.0892,3.4251,19.6827,33.3268,30
+Python,melhor_caso,grande,100000,267.1731,16.7301,242.6445,309.8046,30
+Python,caso_medio,pequeno,1000,2.206,0.5197,1.9564,4.0662,30
+Python,caso_medio,medio,10000,25.7639,1.2348,24.119,29.7981,30
+Python,caso_medio,grande,100000,349.5182,30.4268,313.1663,409.8776,30
+Python,pior_caso,pequeno,1000,1.9848,0.4835,1.7001,3.5191,30
+Python,pior_caso,medio,10000,21.2625,1.3615,20.0802,25.8447,30
+Python,pior_caso,grande,100000,255.7053,4.9912,247.7212,268.0577,30

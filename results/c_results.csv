@@ -1,0 +1,10 @@
+linguagem,cenario,tamanho,n,media_ms,desvio_ms,min_ms,max_ms,rodadas
+C,melhor_caso,pequeno,1000,0.1542,0.0500,0.1175,0.3603,30
+C,melhor_caso,medio,10000,1.7182,0.3743,1.3798,2.4782,30
+C,melhor_caso,grande,100000,17.3820,1.9626,13.9280,21.4555,30
+C,caso_medio,pequeno,1000,0.1763,0.0468,0.1659,0.4236,30
+C,caso_medio,medio,10000,2.6364,0.6737,1.9049,4.5247,30
+C,caso_medio,grande,100000,27.5330,11.4657,20.0015,62.0373,30
+C,pior_caso,pequeno,1000,0.1216,0.0396,0.1077,0.3236,30
+C,pior_caso,medio,10000,1.7256,0.4780,1.2305,3.0863,30
+C,pior_caso,grande,100000,19.3469,12.2353,14.7020,80.8221,30
