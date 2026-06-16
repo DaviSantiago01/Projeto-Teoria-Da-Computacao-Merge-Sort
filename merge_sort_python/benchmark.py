@@ -7,12 +7,15 @@ from merge_sort import merge_sort
 
 RODADAS = 30
 
+# Define os tamanhos de entrada usados na analise experimental.
 tamanhos = [
     ("pequeno", 1000),
     ("medio", 10000),
     ("grande", 100000),
 ]
 
+
+# Gera os vetores de entrada para melhor caso, caso medio e pior caso.
 def gerar_vetor(tipo, n):
     if tipo == "melhor_caso":
         return list(range(n))
@@ -21,6 +24,8 @@ def gerar_vetor(tipo, n):
     else:
         return [random.randint(0, n * 10) for _ in range(n)]
 
+
+# Executa o benchmark para todos os cenarios e tamanhos definidos.
 def rodar_testes():
     resultados = []
 
@@ -29,6 +34,7 @@ def rodar_testes():
             tempos = []
 
             for _ in range(RODADAS):
+                # Cria um novo vetor para cada rodada antes de medir o tempo.
                 vetor = gerar_vetor(cenario, n)
 
                 t1 = time.perf_counter_ns()
@@ -56,7 +62,10 @@ def rodar_testes():
 
     return resultados
 
+
+# Salva os resultados consolidados em um arquivo CSV.
 def salvar_csv(dados, caminho):
+    # Garante que a pasta de resultados exista antes de salvar o arquivo.
     os.makedirs(os.path.dirname(caminho), exist_ok=True)
 
     with open(caminho, "w", newline="", encoding="utf-8") as f:
