@@ -1,13 +1,13 @@
-"""Implementacao didatica do algoritmo Merge Sort em Python.
+"""Implementação didática do algoritmo Merge Sort em Python.
 
-O algoritmo ordena a propria lista recebida, dividindo o problema em
-sublistas menores e depois intercalando as partes ja ordenadas.
+O algoritmo ordena a própria lista recebida, dividindo o problema em
+sublistas menores e depois intercalando as partes já ordenadas.
 """
 
 
-# Junta duas metades ja ordenadas e grava o resultado na lista original.
+# Junta duas metades já ordenadas e grava o resultado na lista original.
 def merge(lista, inicio, meio, fim):
-    # Copia as duas metades que serao intercaladas.
+    # Copia as duas metades que serão intercaladas.
     esquerda = lista[inicio:meio]
     direita = lista[meio:fim]
 
@@ -38,7 +38,7 @@ def merge(lista, inicio, meio, fim):
         k += 1
 
 
-# Funcao principal do Merge Sort.
+# Função principal do Merge Sort.
 # Ela divide a lista em duas partes, ordena cada metade recursivamente
 # e depois chama a intercalação final.
 def merge_sort(lista, inicio=0, fim=None):
@@ -46,7 +46,7 @@ def merge_sort(lista, inicio=0, fim=None):
     if fim is None:
         fim = len(lista)
 
-    # Uma sublista com zero ou um elemento ja esta ordenada.
+    # Uma sublista com zero ou um elemento já está ordenada.
     if fim - inicio <= 1:
         return
 

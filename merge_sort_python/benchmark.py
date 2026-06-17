@@ -3,11 +3,12 @@ import os
 import random
 import statistics
 import time
+
 from merge_sort import merge_sort
 
 RODADAS = 30
 
-# Define os tamanhos de entrada usados na analise experimental.
+# Define os tamanhos de entrada usados na análise experimental.
 tamanhos = [
     ("pequeno", 1000),
     ("medio", 10000),
@@ -15,7 +16,7 @@ tamanhos = [
 ]
 
 
-# Gera os vetores de entrada para melhor caso, caso medio e pior caso.
+# Gera os vetores de entrada para melhor caso, caso médio e pior caso.
 def gerar_vetor(tipo, n):
     if tipo == "melhor_caso":
         return list(range(n))
@@ -25,7 +26,7 @@ def gerar_vetor(tipo, n):
         return [random.randint(0, n * 10) for _ in range(n)]
 
 
-# Executa o benchmark para todos os cenarios e tamanhos definidos.
+# Executa o benchmark para todos os cenários e tamanhos definidos.
 def rodar_testes():
     resultados = []
 
@@ -46,17 +47,19 @@ def rodar_testes():
             media = statistics.mean(tempos)
             desvio = statistics.stdev(tempos)
 
-            resultados.append({
-                "linguagem": "Python",
-                "cenario": cenario,
-                "tamanho": nome_tam,
-                "n": n,
-                "media_ms": round(media, 4),
-                "desvio_ms": round(desvio, 4),
-                "min_ms": round(min(tempos), 4),
-                "max_ms": round(max(tempos), 4),
-                "rodadas": RODADAS,
-            })
+            resultados.append(
+                {
+                    "linguagem": "Python",
+                    "cenario": cenario,
+                    "tamanho": nome_tam,
+                    "n": n,
+                    "media_ms": round(media, 4),
+                    "desvio_ms": round(desvio, 4),
+                    "min_ms": round(min(tempos), 4),
+                    "max_ms": round(max(tempos), 4),
+                    "rodadas": RODADAS,
+                }
+            )
 
             print(f"  {cenario:<14} {nome_tam:<10} n={n:<7}  media={media:.4f} ms  desvio={desvio:.4f} ms")
 
@@ -74,6 +77,7 @@ def salvar_csv(dados, caminho):
         writer.writerows(dados)
 
     print(f"\nSalvo em: {caminho}")
+
 
 if __name__ == "__main__":
     random.seed(42)
